@@ -31,12 +31,14 @@ function setQuestion(number) {
     var quizForm = document.getElementById("quizform");
     var question = document.createElement("p");
     question.id = "question";
+    question.className = "itemQuestion";
     question.innerText = qnsSet.question;
     quizForm.appendChild(question);
 
     var choiceArr = qnsSet.choices;
     for(var i = 0; i<choiceArr.length; i++){
         var para = document.createElement("p");
+        para.className = "itemChoice";
         var ch = document.createElement("input");
         ch.className = "answerText";
         ch.type = "radio";
@@ -51,6 +53,7 @@ function setQuestion(number) {
     var btnNext = document.createElement("button");
     btnNext.innerText = "Next";
     btnNext.id = "btnNext";
+    btnNext.className= "btnNext";
     btnNext.onclick = submitAnswer;
     quizForm.appendChild(btnNext);
 }
@@ -58,11 +61,20 @@ function setQuestion(number) {
 function submitAnswer(){
     var correctAnswer = allQuestion[start].correctAnswer;
     var choices = document.getElementsByName("user_answer");
+    var checkSelect = false;
     for(var i = 0; i<choices.length; i++) {
-        if(choices[i].checked && choices[i].value == correctAnswer) {
-            alert("You have selected the correct answer");
-            totalScore++;
+        if(choices[i].checked) {
+            checkSelect = true;
+            if(choices[i].value == correctAnswer) {
+                alert("You have selected the correct answer");
+                totalScore++;
+            }
+            break;
         }
+    }
+    if(!checkSelect){
+        alert("Please select an answer.");
+        return false;
     }
     removeQuestion();
     start++;
@@ -84,10 +96,12 @@ function removeQuestion() {
 function endQuiz(){
     var quizForm = document.getElementById("quizform");
     var score = document.createElement("p");
-    score.innerText = totalScore + " out of " + totalQuestion;
+    score.innerText = totalScore + " / " + totalQuestion;
+    score.className="score";
     quizForm.appendChild(score);
     var btnStartOver = document.createElement("button");
     btnStartOver.innerText = "Try again";
+    btnStartOver.className = "btnTryAgain";
     btnStartOver.onclick = startQuiz;
     quizForm.appendChild(btnStartOver);
 }

@@ -1,3 +1,47 @@
+h1,h2,h3,h4,h5,h6{
+    font-family: "Roboto", sans-serif;
+}
+
 .answerText{
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    margin-left: 30px;
     margin-right: 15px;
+}
+
+.itemChoice{
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    margin-right: 15px;
+}
+
+.itemQuestion{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    margin-right: 15px;
+}
+
+.btnNext{
+    background: #3F51B5;
+    color:#E3F2FD;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 15px;
+    padding: 10px 50px;
+}
+
+.btnTryAgain{
+    background: #03A9F4;
+    color: #ECEFF1;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 15px;
+    padding: 10px 50px;
+}
+
+.score{
+    color: #000000;
+    font-size: 40px;
+    font-weight: 800;
 }
