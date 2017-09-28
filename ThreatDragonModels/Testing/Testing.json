@@ -1,9 +1,18 @@
 {
   "summary": {
-    "title": "Testing"
+    "title": "Testing",
+    "owner": "adf",
+    "description": "affaf"
   },
   "detail": {
     "contributors": [],
-    "diagrams": []
+    "diagrams": [
+      {
+        "title": "saf",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ],
+    "reviewer": "asf"
   }
 }
